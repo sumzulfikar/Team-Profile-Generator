@@ -1,0 +1,29 @@
+{
+  "name": "inquirer",
+  "version": "6.5.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sumzulfikar"
+  },
+  "keywords": [
+    "team",
+    "profile",
+    "generator"
+  ],
+  "author": "Sumaiya Zulfikar",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^6.5.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
