@@ -32,7 +32,3 @@ Next the User will be prompted to add either an Engineer or Intern in their team
   Once installed go to the folder __tests__
   In the file enployee run npm run test
   The test suite results will show up -all tests should pass.
-
-
- 
- 
