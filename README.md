@@ -25,8 +25,8 @@ Next the User will be prompted to add either an Engineer or Intern in their team
 - For Engineer github url and for Intern name of college will be prompted
 - The user will be prompted the choices until they choose Quit
 - Once user quits an HTML page is generated with all the Team Member details entered by user.
-- Below is a [screenshot of webpage] (https://github.com/sumzulfikar/Team-Profile-Generator/blob/main/images/team-html-ss.PNG)
-  
+- Below is a [screenshot of webpage] (./images\team-html-ss.PNG)
+
   ### Test
   To Test Install Jest  by running npm install --save-dev jest
   Once installed go to the folder __tests__
