@@ -1,22 +1,34 @@
+//modules required for team profile generator
+
 const Manager = require("./lib/Manager.js");
 const Engineer = require("./lib/Engineer.js");
 const Intern = require("./lib/Intern.js");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
-
+//team array to include manager, engineer and intern object profiles
 let team=[];
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
-
+//Command line promt to welcome users
 console.log("Let us build your team!");
 
 
 let prompt = inquirer.createPromptModule();
- 
+//function to check valid email format
+const emailValidation=(value)=>{
+    const formatValid=value.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
+    if (!formatValid){
+       return console.log(`\n Please enter valid email format!\n`);
+    }
+    else{ 
+        return true;
+    }
+
+}
 
 //Questions prompted for Manager
 
@@ -34,7 +46,9 @@ const managerQuestions=[
     {
         type: "input",
         name: "email",
-        message: "Enter email address:"
+        message: "Enter email address:",
+        //adding email validation 
+        validate: emailValidation
     },
     {
         type: "input",
@@ -57,7 +71,9 @@ const engineerQuestions=[
     {
         type: "input",
         name: "email",
-        message: "Enter email address:"
+        message: "Enter email address:",
+        //adding email validation 
+        validate: emailValidation
     },
     {
         type: "input",
@@ -82,7 +98,9 @@ const internQuestions=[
     {
         type: "input",
         name: "email",
-        message: "Enter email address:"
+        message: "Enter email address:",
+        //adding email validation 
+        validate: emailValidation
     },
     {
         type: "input",
@@ -135,7 +153,7 @@ promptAddIntern=()=>{
 
 });
 }
-
+//Loop to enable users to add Engineers or Interns in the team
 promptAddMoreTeam=()=>{
 return prompt(teamAddQuestion).then(function(teamAddAnswer){
 if(teamAddAnswer.role.includes("Engineer")){
@@ -151,16 +169,14 @@ else if (teamAddAnswer.role.includes("Quit")){
 });
 }
 
-
-
-
-
+//Team building is completed and HTML generated
 const writeHtml=(team)=>{
 fs.writeFile(outputPath, render(team), function (err) {
     if (err) throw err;
     console.log('Team profile generated in the HTML!');
   });
 }
+
 
 promptAddManager();
 
