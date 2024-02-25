@@ -1,9 +1,11 @@
-const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
+const Manager = require("./lib/Manager.js");
+const Engineer = require("./lib/Engineer.js");
+const Intern = require("./lib/Intern.js");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
+
+let team=[];
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
@@ -15,7 +17,6 @@ console.log("Let us build your team!");
 
 let prompt = inquirer.createPromptModule();
  
-
 
 //Questions prompted for Manager
 
@@ -98,13 +99,16 @@ const teamAddQuestion=[ {
     choices:["Engineer","Intern","Quit"]
 }];
 //adding prompts for each user type
+
 promptAddManager=()=>{
     prompt(managerQuestions).then(function(managerAnswers) {
             console.log(managerAnswers);
             const managerObj= new Manager(managerAnswers.name,managerAnswers.id,managerAnswers.email,managerAnswers.office);
             console.log(managerObj);
+            team.push(managerObj);
             promptAddMoreTeam();
-
+       
+            
 });}
 
 
@@ -113,8 +117,9 @@ promptAddEngineer=()=>{
         console.log(`Engineer${engineerAnswers}`);
         const engineerObj=new Engineer(engineerAnswers.name,engineerAnswers.id,engineerAnswers.email,engineerAnswers.github);
         console.log(engineerObj);
+        team.push(engineerObj);
         promptAddMoreTeam();
-
+       
     });   
 
 }
@@ -124,7 +129,9 @@ promptAddIntern=()=>{
         console.log(`Intern${internAnswers}`);
         const internObj=new Intern(internAnswers.name,internAnswers.id,internAnswers.email,internAnswers.school);
         console.log(internObj);
+        team.push(internObj);
         promptAddMoreTeam();
+            
 
 });
 }
@@ -137,19 +144,25 @@ if(teamAddAnswer.role.includes("Engineer")){
 else if(teamAddAnswer.role.includes("Intern")){
     promptAddIntern();
 }
-else {return;}
+else if (teamAddAnswer.role.includes("Quit")){
+    writeHtml(team);
+}
 
 });
 }
 
+
+
+
+
+const writeHtml=(team)=>{
+fs.writeFile(outputPath, render(team), function (err) {
+    if (err) throw err;
+    console.log('Team profile generated in the HTML!');
+  });
+}
+
 promptAddManager();
-
-
-
-
-
-            
-       
 
 
 
