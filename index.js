@@ -40,14 +40,6 @@ const managerQuestions=[
         name: "office",
         message: "Enter office number:"
     },
-    {
-        type:"checkbox",
-        name:"role",
-        message:"What is the role of the team member?",
-        choices:["Engineer","Intern"],
-        
-    },
-
 ]
 //Questions prompted for Engineer
 const engineerQuestions=[
@@ -99,31 +91,65 @@ const internQuestions=[
 
 ]
 
-// Prompting the command line for team information gathering
+const teamAddQuestion=[ {
+    type:"checkbox",
+    name:"role",
+    message:`Let us add some team members.\n What is the role of the team member you would like to add?`,
+    choices:["Engineer","Intern","Quit"]
+}];
+//adding prompts for each user type
+promptAddManager=()=>{
+    prompt(managerQuestions).then(function(managerAnswers) {
+            console.log(managerAnswers);
+            const managerObj= new Manager(managerAnswers.name,managerAnswers.id,managerAnswers.email,managerAnswers.office);
+            console.log(managerObj);
+            promptAddMoreTeam();
 
-prompt(managerQuestions).then(
-        
-    function (managerAnswers) {
-        console.log(managerAnswers);
-        const managerObj= new Manager(managerAnswers.name,managerAnswers.id,managerAnswers.email,managerAnswers.office);
-        console.log(managerObj);
+});}
 
-               if(managerAnswers.role.includes("Engineer")){
-                prompt(engineerQuestions).then(function(engineerAnswers){
-                    console.log(`Engineer${engineerAnswers}`);
-                    const engineerObj=new Engineer(engineerAnswers.name,engineerAnswers.id,engineerAnswers.email,engineerAnswers.github);
-                    console.log(engineerObj);
-                });   
-            }
-            else if(managerAnswers.role.includes("Intern")){
-                prompt(internQuestions).then(function(internAnswers){
-                    console.log(`Intern${internAnswers}`);
-                    const internObj=new Intern(internAnswers.name,internAnswers.id,internAnswers.email,internAnswers.school);
-                    console.log(internObj);
-                });   
-            }
-            else return ;
-        });
+
+promptAddEngineer=()=>{
+    prompt(engineerQuestions).then(function(engineerAnswers){
+        console.log(`Engineer${engineerAnswers}`);
+        const engineerObj=new Engineer(engineerAnswers.name,engineerAnswers.id,engineerAnswers.email,engineerAnswers.github);
+        console.log(engineerObj);
+        promptAddMoreTeam();
+
+    });   
+
+}
+
+promptAddIntern=()=>{
+    prompt(internQuestions).then(function(internAnswers){
+        console.log(`Intern${internAnswers}`);
+        const internObj=new Intern(internAnswers.name,internAnswers.id,internAnswers.email,internAnswers.school);
+        console.log(internObj);
+        promptAddMoreTeam();
+
+});
+}
+
+promptAddMoreTeam=()=>{
+return prompt(teamAddQuestion).then(function(teamAddAnswer){
+if(teamAddAnswer.role.includes("Engineer")){
+    promptAddEngineer();
+}
+else if(teamAddAnswer.role.includes("Intern")){
+    promptAddIntern();
+}
+else {return;}
+
+});
+}
+
+promptAddManager();
+
+
+
+
+
+            
+       
 
 
 
