@@ -29,7 +29,9 @@ Next, the User will be prompted to add either an Engineer or Intern in their tea
 - Below is a screenshot of the webpage![screenshot of webpage](https://github.com/sumzulfikar/Team-Profile-Generator/assets/150956638/e19f01df-9184-43c7-9da5-b44d2e703447)
 
   ### Video Walkthrough
-  [Video walkthrough in commandline to generate team profile] (https://www.youtube.com/watch?v=OgQVKetdgi4)
+  Video walkthrough in commandline to generate team profile can be watched here:
+  https://www.youtube.com/watch?v=OgQVKetdgi4
+  
   ### Sample
   ### Test
   To Test
