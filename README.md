@@ -1,7 +1,8 @@
-# Team-Profile-Generator
+![Static Badge](https://img.shields.io/badge/NPM-6.5.0-blue)
 
+# Team Profile Generator
 ### Description
-Enabling Manager users  to generate a webpage that displays their team's basic information so that they have a quick access to their team member's emails and GitHub profiles.
+Enabling Manager users  to generate a webpage that displays their team's basic information so that they have a quick access to the team member's emails and GitHub profiles.
 
 ### NPM packages installed
 -  inquirer@6.5.0
