@@ -32,7 +32,8 @@ Next, the User will be prompted to add either an Engineer or Intern in their tea
   Video walkthrough in commandline to generate team profile can be watched here:
   https://www.youtube.com/watch?v=OgQVKetdgi4
   
-  ### Sample
+  ### Sample HTML Page
+  Please click the output folder to view sample HTML page generated https://github.com/sumzulfikar/Team-Profile-Generator/tree/main/output
   ### Test
   To Test
   - Install Jest  by running npm install --save-dev jest
