@@ -120,13 +120,10 @@ const teamAddQuestion=[ {
 
 promptAddManager=()=>{
     prompt(managerQuestions).then(function(managerAnswers) {
-            console.log(managerAnswers);
             const managerObj= new Manager(managerAnswers.name,managerAnswers.id,managerAnswers.email,managerAnswers.office);
-            console.log(managerObj);
             team.push(managerObj);
             promptAddMoreTeam();
-       
-            
+                
 });}
 
 
@@ -134,7 +131,6 @@ promptAddEngineer=()=>{
     prompt(engineerQuestions).then(function(engineerAnswers){
         console.log(`Engineer${engineerAnswers}`);
         const engineerObj=new Engineer(engineerAnswers.name,engineerAnswers.id,engineerAnswers.email,engineerAnswers.github);
-        console.log(engineerObj);
         team.push(engineerObj);
         promptAddMoreTeam();
        
@@ -146,11 +142,9 @@ promptAddIntern=()=>{
     prompt(internQuestions).then(function(internAnswers){
         console.log(`Intern${internAnswers}`);
         const internObj=new Intern(internAnswers.name,internAnswers.id,internAnswers.email,internAnswers.school);
-        console.log(internObj);
         team.push(internObj);
         promptAddMoreTeam();
-            
-
+          
 });
 }
 //Loop to enable users to add Engineers or Interns in the team
