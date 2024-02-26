@@ -28,6 +28,8 @@ Next, the User will be prompted to add either an Engineer or Intern in their tea
 - Once user quits an HTML page is generated with all the Team Member details entered by user.
 - Below is a screenshot of the webpage![screenshot of webpage](https://github.com/sumzulfikar/Team-Profile-Generator/assets/150956638/e19f01df-9184-43c7-9da5-b44d2e703447)
 
+  ### Video Walkthrough
+  [Video walkthrough in commandline] (https://youtu.be/OgQVKetdgi4)
   ### Test
   To Test
   - Install Jest  by running npm install --save-dev jest
