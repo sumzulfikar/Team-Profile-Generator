@@ -26,7 +26,7 @@ Next, the User will be prompted to add either an Engineer or Intern in their tea
 - For Engineer github url and for Intern name of college will be prompted
 - The user will be prompted the choices until they choose Quit
 - Once user quits an HTML page is generated with all the Team Member details entered by user.
-- Below is a![screenshot of webpage](https://github.com/sumzulfikar/Team-Profile-Generator/assets/150956638/e19f01df-9184-43c7-9da5-b44d2e703447)
+- Below is a screenshot of the webpage![screenshot of webpage](https://github.com/sumzulfikar/Team-Profile-Generator/assets/150956638/e19f01df-9184-43c7-9da5-b44d2e703447)
 
   ### Test
   To Test
