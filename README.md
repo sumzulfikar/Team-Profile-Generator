@@ -41,3 +41,6 @@ Next, the User will be prompted to add either an Engineer or Intern in their tea
   - In the file enployee run npm run test
   - The test suite results will show up
   - All tests should pass.
+  - Below are the screenshot of the test results
+    ![Test Passed Results](https://github.com/sumzulfikar/Team-Profile-Generator/assets/150956638/ca405772-b247-4892-bc46-d2f5d5237227)
+
