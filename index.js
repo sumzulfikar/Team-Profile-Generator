@@ -129,7 +129,6 @@ promptAddManager=()=>{
 
 promptAddEngineer=()=>{
     prompt(engineerQuestions).then(function(engineerAnswers){
-        console.log(`Engineer${engineerAnswers}`);
         const engineerObj=new Engineer(engineerAnswers.name,engineerAnswers.id,engineerAnswers.email,engineerAnswers.github);
         team.push(engineerObj);
         promptAddMoreTeam();
@@ -140,7 +139,6 @@ promptAddEngineer=()=>{
 
 promptAddIntern=()=>{
     prompt(internQuestions).then(function(internAnswers){
-        console.log(`Intern${internAnswers}`);
         const internObj=new Intern(internAnswers.name,internAnswers.id,internAnswers.email,internAnswers.school);
         team.push(internObj);
         promptAddMoreTeam();
